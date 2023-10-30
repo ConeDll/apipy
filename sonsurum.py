@@ -9,6 +9,24 @@ import threading
  
 colorama.init()
 
+
+
+
+banner = f"""{Fore.LIGHTYELLOW_EX}
+
+ █████╗ ███╗   ██╗████████╗██╗       ██████╗
+██╔══██╗████╗  ██║╚══██╔══╝██║      ██╔════╝
+███████║██╔██╗ ██║   ██║   ██║█████╗██║     
+██╔══██║██║╚██╗██║   ██║   ██║╚════╝██║     
+██║  ██║██║ ╚████║   ██║   ██║      ╚██████╗
+╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚═╝       ╚═════╝
+                    {Fore.CYAN}[+]Coded By ConeDLL
+
+                    
+"""
+
+
+
 def print_slow(str):
     for letter in str:
         sys.stdout.write(letter)
@@ -45,7 +63,23 @@ if response_version != veri.splitlines():
     update_done = True
 
 if not update_done:
+
+    print(banner)
+
+
+
+
+    print(Fore.LIGHTMAGENTA_EX)
+
+
+
+
+
+
+
+
     choose = input('Lütfen İşleminizi Seçin\n1-DDos\n2-Alfabe: ')
+    print(Fore.WHITE)
 if choose == '2':
     
     alfabe = {
@@ -157,7 +191,7 @@ if choose == '2':
 
 if choose == '1':
     
-    site = input(Fore.LIGHTYELLOW_EX+'Hedef Siteyi Giriniz (Örnek: https://hedefsite.com: '+Fore.WHITE)
+    site = input(Fore.LIGHTYELLOW_EX+'Hedef Siteyi Giriniz (Örnek: https://hedefsite.com): '+Fore.WHITE)
     def atak():
         try:
             while True:
