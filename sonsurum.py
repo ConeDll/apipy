@@ -78,7 +78,7 @@ if not update_done:
 
 
 
-    choose = input('Lütfen İşleminizi Seçin\n1-DDos\n2-Alfabe: ')
+    choose = input('Lütfen İşleminizi Seçin\n1-DDos\n2-Alfabe\nSeçimin: ')
     print(Fore.WHITE)
 if choose == '2':
     
