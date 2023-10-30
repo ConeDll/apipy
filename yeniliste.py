@@ -131,7 +131,7 @@ if not update_done:
         return orijinal_mesaj
 
     while True:
-        secim = input(f"{Fore.YELLOW}Ne yapmak istersiniz?{Fore.WHITE}\n\n\n\n 1- Metni kodla\n2 - Metni çöz\n3 - Temizle\n4 - Çıkış\nSeçiminiz: ")
+        secim = input(f"{Fore.YELLOW}Ne yapmak istersiniz?{Fore.WHITE}\n\n\n\n1- Metni kodla\n2 - Metni çöz\n3 - Temizle\n4 - Çıkış\nSeçiminiz: ")
 
         if secim == '1':
             mesaj = input("Metni girin: ")
