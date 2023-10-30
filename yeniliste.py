@@ -18,7 +18,7 @@ def print_slow(str):
 # Güncelleme bayrağı
 update_done = False
 
-version_link = 'https://raw.githubusercontent.com/ConeDll/apipy/main/alfabe.py'
+version_link = 'https://raw.githubusercontent.com/ConeDll/apipy/main/yeniliste.py'
 r = requests.get(version_link)
 response_version = r.text.splitlines()  # İndirilen veriyi satır satır ayırın
 
