@@ -1,4 +1,3 @@
-import base64
 from colorama import Fore
 import colorama
 import os
