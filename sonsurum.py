@@ -129,7 +129,7 @@ if response_version != veri.splitlines():
     for i in tqdm(range(101), desc='Güncelleniyor', ascii=False, ncols=75):
         time.sleep(0.01)
     print(Fore.WHITE)
-    fast_print(bannerutku)
+    print(bannerutku)
     print_slow(Fore.GREEN + '\nGüncelleme Tamamlandı')
     print_slow(Fore.CYAN + '\nSistem Yeniden Başlatılıyor...\n')
     os.system('cls')
