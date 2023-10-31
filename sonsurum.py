@@ -161,7 +161,7 @@ if choose == '2':
         'D': '==-1',
         'E': 'HELB',
         'F': 'KAMF',
-        'G': '4kMKf',
+        'G': 'KA/f',
         'Ğ': 'ad0M',
         'H': 'KA1D',
         'I': 'dkaB',
