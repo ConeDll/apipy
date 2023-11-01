@@ -145,6 +145,7 @@ if choose == "4":
     for port in open_ports:
         
         print(f"Port {Fore.GREEN} {port} is open on {ip_add_entered}.")
+     cikis4 = input(f"{Fore.WHITE}Çıkmak için exit yaz: ")
 
 if choose == "3":
     ip = input(f"{Fore.WHITE}\n Enter IP target : {Fore.GREEN}") #INPUT IP ADDRESS
