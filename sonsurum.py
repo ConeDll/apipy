@@ -129,6 +129,9 @@ if choose == "3":
     print(f"{Fore.LIGHTCYAN_EX} Offset          :{Fore.YELLOW}", ip_data["timezone"]["offset"])
     print(f"{Fore.LIGHTCYAN_EX} UTC             :{Fore.YELLOW}", ip_data["timezone"]["utc"])
     print(f"{Fore.LIGHTCYAN_EX} Current Time    :{Fore.YELLOW}", ip_data["timezone"]["current_time"])
+    cikis = input(F"\n\n{Fore.GREEN}Çıkmak için exit yazınız: ")
+    if cikis == "exit":
+        exit()
 
 if choose == '2':
     
