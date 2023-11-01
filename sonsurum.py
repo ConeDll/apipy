@@ -6,6 +6,7 @@ import requests
 from tqdm import tqdm
 import sys, time, random
 import threading
+import json
  
 colorama.init()
 
@@ -70,7 +71,6 @@ if response_version != veri.splitlines():
 
 
     
-    # Güncelleme tamamlandı, bayrağı ayarlayın
     update_done = True
 
 if not update_done:
@@ -90,8 +90,46 @@ if not update_done:
 
 
 
-    choose = input('Lütfen İşleminizi Seçin\n1-DDos\n2-Alfabe\nSeçimin: ')
+    choose = input('Lütfen İşleminizi Seçin\n1-DDos\n2-Alfabe\n3-IP Location\nSeçimin: ')
     print(Fore.WHITE)
+if choose == "3":
+    ip = input(f"{Fore.WHITE}\n Enter IP target : {Fore.GREEN}") #INPUT IP ADDRESS
+    print()
+    print(f' {Fore.LIGHTCYAN_EX}============= {Fore.YELLOW}SHOW INFORMATION IP ADDRESS {Fore.YELLOW}=============')
+    req_api = requests.get(f"http://ipwho.is/{ip}") #API IPWHOIS.IS
+    ip_data = json.loads(req_api.text)
+    time.sleep(2)
+    print(f"{Fore.LIGHTCYAN_EX}\n IP target       :{Fore.YELLOW}", ip)
+    print(f"{Fore.LIGHTCYAN_EX} Type IP         :{Fore.YELLOW}", ip_data["type"])
+    print(f"{Fore.LIGHTCYAN_EX} Country         :{Fore.YELLOW}", ip_data["country"])
+    print(f"{Fore.LIGHTCYAN_EX} Country Code    :{Fore.YELLOW}", ip_data["country_code"])
+    print(f"{Fore.LIGHTCYAN_EX} City            :{Fore.YELLOW}", ip_data["city"])
+    print(f"{Fore.LIGHTCYAN_EX} Continent       :{Fore.YELLOW}", ip_data["continent"])
+    print(f"{Fore.LIGHTCYAN_EX} Continent Code  :{Fore.YELLOW}", ip_data["continent_code"])
+    print(f"{Fore.LIGHTCYAN_EX} Region          :{Fore.YELLOW}", ip_data["region"])
+    print(f"{Fore.LIGHTCYAN_EX} Region Code     :{Fore.YELLOW}", ip_data["region_code"])
+    print(f"{Fore.LIGHTCYAN_EX} Latitude        :{Fore.YELLOW}", ip_data["latitude"])
+    print(f"{Fore.LIGHTCYAN_EX} Longitude       :{Fore.YELLOW}", ip_data["longitude"])
+    lat = int(ip_data['latitude'])
+    lon = int(ip_data['longitude'])
+    print(f"{Fore.LIGHTCYAN_EX} Maps            :{Fore.YELLOW}",f"https://www.google.com/maps/@{lat},{lon},8z")
+    print(f"{Fore.LIGHTCYAN_EX} EU              :{Fore.YELLOW}", ip_data["is_eu"])
+    print(f"{Fore.LIGHTCYAN_EX} Postal          :{Fore.YELLOW}", ip_data["postal"])
+    print(f"{Fore.LIGHTCYAN_EX} Calling Code    :{Fore.YELLOW}", ip_data["calling_code"])
+    print(f"{Fore.LIGHTCYAN_EX} Capital         :{Fore.YELLOW}", ip_data["capital"])
+    print(f"{Fore.LIGHTCYAN_EX} Borders         :{Fore.YELLOW}", ip_data["borders"])
+    print(f"{Fore.LIGHTCYAN_EX} Country Flag    :{Fore.YELLOW}", ip_data["flag"]["emoji"])
+    print(f"{Fore.LIGHTCYAN_EX} ASN             :{Fore.YELLOW}", ip_data["connection"]["asn"])
+    print(f"{Fore.LIGHTCYAN_EX} ORG             :{Fore.YELLOW}", ip_data["connection"]["org"])
+    print(f"{Fore.LIGHTCYAN_EX} ISP             :{Fore.YELLOW}", ip_data["connection"]["isp"])
+    print(f"{Fore.LIGHTCYAN_EX} Domain          :{Fore.YELLOW}", ip_data["connection"]["domain"])
+    print(f"{Fore.LIGHTCYAN_EX} ID              :{Fore.YELLOW}", ip_data["timezone"]["id"])
+    print(f"{Fore.LIGHTCYAN_EX} ABBR            :{Fore.YELLOW}", ip_data["timezone"]["abbr"])
+    print(f"{Fore.LIGHTCYAN_EX} DST             :{Fore.YELLOW}", ip_data["timezone"]["is_dst"])
+    print(f"{Fore.LIGHTCYAN_EX} Offset          :{Fore.YELLOW}", ip_data["timezone"]["offset"])
+    print(f"{Fore.LIGHTCYAN_EX} UTC             :{Fore.YELLOW}", ip_data["timezone"]["utc"])
+    print(f"{Fore.LIGHTCYAN_EX} Current Time    :{Fore.YELLOW}", ip_data["timezone"]["current_time"])
+
 if choose == '2':
     
     alfabe = {
