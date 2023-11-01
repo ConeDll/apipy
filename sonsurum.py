@@ -95,7 +95,7 @@ if not update_done:
 if choose == "3":
     ip = input(f"{Fore.WHITE}\n Enter IP target : {Fore.GREEN}") #INPUT IP ADDRESS
     print()
-    print(f' {Fore.LIGHTCYAN_EX}============= {Fore.YELLOW}SHOW INFORMATION IP ADDRESS {Fore.YELLOW}=============')
+    print(f' {Fore.LIGHTCYAN_EX}============= {Fore.YELLOW}SHOW INFORMATION IP ADDRESS {Fore.LIGHTCYAN_EX}=============')
     req_api = requests.get(f"http://ipwho.is/{ip}") #API IPWHOIS.IS
     ip_data = json.loads(req_api.text)
     time.sleep(2)
