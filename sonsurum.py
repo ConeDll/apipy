@@ -144,7 +144,7 @@ if choose == "4":
 
     for port in open_ports:
         
-        print(f"Port {Fore.GREEN} {port} is open on {Fore.CYAN} {ip_add_entered}")
+        print(f"{Fore.GREEN} Port {port} is open on {Fore.CYAN} {ip_add_entered}")
     cikis4 = input(f"{Fore.WHITE}Çıkmak için exit yaz: ")
     if cikis4 == "exit":
         exit()
